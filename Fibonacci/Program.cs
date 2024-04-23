@@ -1,19 +1,18 @@
-﻿int max = 0, numeroA = 1, numeroB = 1, aux = 0;
+﻿int posicaoMaxima = 0, atual = 0, penultimo = 0, ultimo = 1, auxiliar = 0;
 
 do
 {
-    Console.WriteLine("Digite uma posicão para chegarmos na sequência FIbonacci");
-    max = int.Parse(Console.ReadLine());
+    Console.WriteLine("Digite uma posição para chegarmos na sequência Fibonacci:");
+    posicaoMaxima = int.Parse(Console.ReadLine());
+} while (posicaoMaxima <= 0);
 
-} while (max <= 0);
+Console.WriteLine("Fibonacci até a posição " + posicaoMaxima);
 
-Console.WriteLine("Fibonacci até a posição " + max);
-
-for (int i = 0; i < max; i++)
+for (int i = 0; i < posicaoMaxima; i++)
 {
-    Console.Write(numeroA + " ");
+    Console.Write(atual + " ");
 
-    aux = numeroA;
-    numeroA = numeroB;
-    numeroB = aux + numeroB;
+    auxiliar = atual;
+    atual = ultimo;
+    ultimo = auxiliar + ultimo;
 }
